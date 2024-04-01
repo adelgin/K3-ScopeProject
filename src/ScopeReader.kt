@@ -1,9 +1,9 @@
 import java.util.*
 
-class ScopeReader(private val ScopeStr : String) {
+class ScopeValidator(private val ScopeStr : String) {
     private val openScopeMap = mapOf('{' to '}', '(' to ')', '[' to ']', '<' to '>')
     private var openScopeStack = Stack<Char>()
-    public fun reader() : Boolean {
+    fun validate() : Boolean {
         for (i in ScopeStr) {
             if (openScopeMap.containsKey(i)) {
                 openScopeStack.push(i)
